@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<title>Notes on Data Science</title>
+		<!-- Browser Icon -->
+		<link rel='shortcut icon' type='image/png' href='images/icon.png'>
+		<!-- Bootstrap CSS -->
+		<link rel='stylesheet' href='css/bootstrap.min.css'>
+		<!-- <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'> -->
+		<!-- MathJax JS -->
+		<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML'></script> -->
+		<!-- Custom CSS -->
+		<link rel='stylesheet' type='text/css' href='css/nds.css'>
+	</head>
+
+	<body onload='initNds()' style='font-family:Calibri' data-spy="scroll" data-target="#toc">
+		<!-- Horizontal Navigation bar -->
+		<!-- <nav id='navBar' class='navbar navbar-light bg-light sticky-top'>
+			<div class='container-fluid'>
+				<p>&#128212; Some notes on <span style='font-weight: bold;font-style:italic'>Data Science</span></p>
+			</div>
+		</nav> -->
+		<!-- Page content -->
+		<div class='container-fluid'>
+			<div class='row'>
+				<!-- Sidebar -->
+				<div class='col-2 bg-light padding-tb-10'>
+					<nav id='toc' class='navbar navbar-light sticky-top' data-toggle='toc'>
+						<!-- Title -->
+						<p>&#128212;&nbsp;&nbsp;<span class='doc-title'>Data Science Notes</span></p>
+						<!-- TOC -->
+						<ul id='toc-list' class='nav navbar-nav'>
+							<li><a class='nav-link anchor active' href='#s00'>About</a></li>
+							<li><a class='nav-link' href='#' data-toc='ignore'>Data Science</a></li>
+							<ul class='nav navbar-nav'>
+								<li><a class='nav-link' href='#s01.01'>What is Data Science?</a></li>
+								<li><a class='nav-link' href='#s01.02'>From data to insights</a></li>
+								<li><a class='nav-link' href='#s01.03'>Data Science process</a></li>
+							</ul>
+							<li><a class='nav-link' href='#s02'>Problem Formulation</a></li>
+							<li><a class='nav-link' href='#s03'>Data Analysis</a></li>
+							<li><a class='nav-link' href='#s04'>Modeling</a></li>
+							<li><a class='nav-link' href='#s05'>Deliver Solution</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- Sections -->
+				<div class='col-10'>
+					<!-- Section 0: Introduction & References -->
+					<div id='s00' class='padding-tb-10'>
+						<!-- Introduction -->
+						<div>
+							<h1>About</h1>
+							<hr>
+							<ul class='list-1'>
+								<li>These notes tries to give a high-level view of data science.</li>
+								<li>A practical definition is given highlighting its relation to the disciplines that already exists and solve the same problem.</li>
+								<li>Focus is on overall processes, methodologies and frameworks, showing how data science is useful to solve certain kind of problem.</li>
+								<li>Comprehensive technical understanding of concepts and techniques will require further in-depth reading.</li>
+							</ul>
+						</div>
+						<!-- References -->
+						<div>
+							<p style='padding-top:25px;font-weight:bold;font-size:120%;'>References</p>
+							<hr>
+							<p>This work is inspired in concepts and ideas of the following articles, papers and books:</p>
+							<!-- Section 1: Data Science -->
+							<p style='padding-top:15px;font-weight:bold'>What is Data Science?</p>
+							<ul class='list-2'>
+								<li><a href='http://courses.csail.mit.edu/18.337/2015/docs/50YearsDataScience.pdf' target='_blank'>50 years of Data Science</a>, D. Donoho</li>
+								<li><a href='http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.374.7489&rep=rep1&type=pdf' target='_blank'>Data Mining and Statistics: What's the connection?</a>, J. H. Friedman</li>
+								<li><a href='https://www.oreilly.com/library/view/data-science-for/9781449374273/' target='_blank'>Data Science for Business</a>, F. Provost, T. Fawcett</li>
+								<li><a href='http://shop.oreilly.com/product/0636920028529.do' target='_blank'>Doing Data Science</a>, R. Schutt, C. O'Neil</li>
+								<li><a href='https://www.manning.com/books/think-like-a-data-scientist' target='_blank'>Think like a Data Scientist</a>, B. Godsey</li>
+								<li><a href='https://www.manning.com/books/introducing-data-science' target='_blank'>Introducing Data Science</a>, D. Cielen, B. Meysman, M. Ali</li>
+								<li><a href='https://pdfs.semanticscholar.org/7a7b/51b86e22d0077215287980c7ba793b09e4cd.pdf' target='_blank'>Knowledge Discovery in Databases: An Overview</a>, W J. Frawley, G. Piatetsky-Shapiro, and C. J. Matheus</li>
+								<li><a href='https://storm.cis.fordham.edu/~gweiss/selected-papers/data-mining-and-statistics-hand.pdf' target='_blank'>Data Mining: Statistics and More?</a>, D. J. Hand</li>
+								<li><a href='http://www.hcbravo.org/IntroDataSci/bookdown-notes/index.html' target='_blank'>Lecture Notes: Introduction to Data Science</a>, H. C. Bravo</li>
+							</ul>
+							<!-- Section 3: Data Science Process -->
+							<p style='padding-top:15px;font-weight:bold'>Data Science Process</p>
+							<ul class='list-2'>
+								<li><a href='ftp://ftp.software.ibm.com/software/analytics/spss/support/Modeler/Documentation/14/UserManual/CRISP-DM.pdf' target='_blank'>CRISP-DM 1.0 Step-by-step data mining guides</a>, P. Chapman. <em>et. al</em></li>
+								<li><a href='https://tdwi.org/~/media/64511A895D86457E964174EDC5C4C7B1.PDF' target='_blank'>Foundational Methodology for Data Science</a>, J. B. Rollins</li>
+								<li><a href='https://pdfs.semanticscholar.org/7dfe/3bc6035da527deaa72007a27cef94047a7f9.pdf' target='_blank'>KDD, SEMMA andCRISP-DM: a parallel overiew</a>, A. Azevedo</li>
+								<li><a href='https://sceweb.uhcl.edu/boetticher/ML_DataMining/p27-fayyad.pdf' target='_blank'>The KDD Process for Extracting Useful Knowledge from Volumes of Data</a>, U. Fayyad, G. Piatetsky-Shapiro,	and P. Smyth</li>
+							</ul>
+							<!-- Section 5: Data Analysis -->
+							<p style='padding-top:15px;font-weight:bold'>Data Analysis</p>
+							<ul class='list-2'>
+								<li><a href='https://books.google.com.ar/books/about/Exploratory_Data_Analysis.html?id=UT9dAAAAIAAJ&redir_esc=y' target='_blank'>Exploratory Data Analysis</a>, J. W. Tukey</li>
+								<li><a href='https://projecteuclid.org/download/pdf_1/euclid.aoms/1177704711' target='_blank'>The Future of Data Analysis</a>, J. W. Tukey</li>
+								<li><a href='https://www.statsref.com/StatsRefSample.pdf' target='_blank'>Statistical Analysis Handbook</a>, M. J. Smith</li>
+								<li><a href='https://www.statisticsdonewrong.com/' target='_blank'>Statistics done wrong</a>, A. Reinhart</li>
+							</ul>
+							<!-- Section 6: Data Modeling -->
+							<p style='padding-top:15px;font-weight:bold'>Modeling</p>
+							<ul class='list-2'>
+								<li><a href='http://www2.math.uu.se/~thulin/mm/breiman.pdf' target='_blank'>Statistical Modeling: The Two Cultures</a>, L. Breiman</li>
+								<li><a href='https://web.stanford.edu/~hastie/Papers/ESLII.pdf' target='_blank'>The Elelments of Statistical Learning</a>, T. Hastie, R. Tibshirani, J. Friedman</li>
+								<li><a href='http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.54.3561&rep=rep1&type=pdf' target='_blank'>Statistical themes and lessons for data mining</a>, C. Glymour, D. Madigan, D. Pregibon, and P. Smyth</li>
+								<li><a href='https://www-users.cs.umn.edu/~kumar001/dmbook/index.php' target='_blank'>Introduction to Data Mining</a>, P. Tan, M. Steinbach, V. Kumar</li>
+								<li><a href='https://www.sciencedirect.com/book/9780123814791/data-mining-concepts-and-techniques' target='_blank'>Data Mining: Concepts and Techniques</a>, J. Han, M. Kamber, J. Pei</li>
+								<li><a href='https://www.sciencedirect.com/book/9780123748560/data-mining-practical-machine-learning-tools-and-techniques' target='_blank'>Data Mining: Practical Machine Learning Tools and Techniques</a>, I. H. Witten, E. Frank, M. A. Hall</li>
+								<li><a href='http://www.cs.cmu.edu/~tom/mlbook.html' target='_blank'>Machine Learning</a>, T. Mitchell</li>
+								<li><a href='https://cs.nyu.edu/~mohri/mlbook/' target='_blank'>Foundations of Machine Learning</a>, M. Mohri, A. Rostamizadeh, A. Talwalkar</li>
+								<li><a href='https://mitpress.mit.edu/books/introduction-machine-learning-third-edition' target='_blank'>Introduction to Machine Learning</a>, E. Alpaydın</li>
+								<li><a href='https://alex.smola.org/drafts/thebook.pdf' target='_blank'>Introduction to Machine Learning</a>, A. Smola, S. Vishwanathan</li>
+								<li><a href='https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf' target='_blank'>Understanding Machine Learning: From Theory to Algorithms</a>, S. Shalev-Shwartz, S. Ben-David</li>
+								<li><a href='https://www.wiley.com/en-us/Pattern+Classification%2C+2nd+Edition-p-9780471056690' target='_blank'>Pattern Classification</a>, R. Duda, P. Hart, D. Stork</li>
+								<li><a href='https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf' target='_blank'>A few useful things to know about machine learning</a>, P. Domingos</li>
+								<li><a href='https://arxiv.org/abs/1811.12808' target='_blank'>Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning</a>, S. Raschka</li>
+								<li><a href='https://www.springer.com/gp/book/9781461468486' target='_blank'>Applied predictive modeling</a>, M. Kuhn, K. Johnson</li>
+								<li><a href='https://www.crcpress.com/Ensemble-Methods-Foundations-and-Algorithms/Zhou/p/book/9781439830031' target='_blank'>Ensemble Methods</a>, Z. Zhou</li>
+								<li><a href='https://books.google.com.ar/books/about/Ensemble_Methods_in_Data_Mining.html?id=CdyZpAWt6YcC&source=kp_book_description&redir_esc=y' target='_blank'>Ensemble Methods in Data Mining</a>, G. Seni, J. Elder</li>
+								<li><a href='https://www.cin.ufpe.br/~mcps/AM/BIB/ensemble.pdf' target='_blank'>Ensemble Methods in Machine Learning</a>, T. G. Dietterich</li>
+							</ul>
+						</div>
+					</div>
+					<!-- Section 1: Data Science -->
+					<div id='s01' class='padding-tb-10'>
+						<!-- Section 1.1: What is Data Science? -->
+						<div id='s01.01' class='padding-tb-10 d-none'>
+							<h2>What is Data Science?</h2>
+							<hr>
+							<div class='div-def'>
+								<p class='k-term-title'>Data Science</p>
+								<p><span style='font-weight:bold;color:rgb(84,66,106)'>Multidisciplinary approach</span> for designing and developing <span style='font-weight:bold;color:rgb(234,112,13)'>data-centric 
+									solutions</span> that <span style='font-weight:bold;color:rgb(192,80,70)'>support or automate decision-making</span></p>
+							</div>
+							<img src='images/s01-01.svg' class='mx-auto d-block' style='margin-top: 60px;'>
+						</div>
+						<!-- Section 1.2: From data to insights to actions -->
+						<div id='s01.02' class='padding-tb-10 d-none'>
+							<h2>From data to insights to actions</h2>
+							<hr>
+							<img src='images/s01-02.svg' class='mx-auto d-block'>
+						</div>
+						<!-- Section 1.3: Data Science process -->
+						<div id='s01.03' class='padding-tb-10 d-none'>
+							<h2>Data Science process</h2>
+							<hr>
+							<img src='images/s01-03.svg' class='mx-auto d-block'>
+						</div>
+					</div>
+					<!-- Section 2: Problem Formulation -->
+					<div id='s02' class='padding-tb-10 d-none'>
+						<h1>Problem Formulation</h1>
+						<hr>
+						<img src='images/s02-01.svg' class='mx-auto d-block'>
+					</div>
+					<!-- Section 3: Data Analysis -->
+					<div id='s03' class='padding-tb-10 d-none'>
+						<h1>Data Analysis</h1>
+						<hr>
+						<img src='images/s03-01.svg' class='mx-auto d-block'>
+					</div>
+					<!-- Section 4: Modeling -->
+					<div id='s04' class='padding-tb-10 d-none'>
+						<h1>Modeling</h1>
+						<hr>
+						<img src='images/s04-01.svg' class='mx-auto d-block'>
+					</div>
+					<!-- Section 5: Deliver Solution -->
+					<div id='s05' class='padding-tb-10 d-none'>
+						<h1>Deliver Solution</h1>
+						<hr>
+						<img src='images/s05-01.svg' class='mx-auto d-block'>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!------------------------------------>
+		<!-- JavaScript external references -->
+		<!------------------------------------>
+		<!-- jQuery -->
+		<script src='js/jquery-3.4.1.min.js'></script>
+		<!-- Popper -->
+		<!-- <script src='js/popper.min.js'></script> -->
+		<!-- Bootstrap -->
+		<script src='js/bootstrap.min.js'></script>
+		<!-- Math JS -->
+		<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.0.3/math.min.js'></script> -->
+		<!-- Plotly.js -->
+		<!-- <script src='https://cdn.plot.ly/plotly-latest.min.js'></script> -->
+		<!-- Custom JS library -->
+		<script src='js/nds_main.js'></script>
+	</body>
+</html>
